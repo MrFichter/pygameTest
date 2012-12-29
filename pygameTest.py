@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python #works in linux
 
 #Use this area for testing small pieces of code
 #raw_input ('Press Enter key to exit.')
@@ -31,11 +31,14 @@ black = 0 , 0 , 0 #a color we'll use when we black out the screen below
 
 
 pygame.display.flip() #Redraws the screen.
-while 1: #Forever loop.
+
+running = True
+while running: #Forever loop.
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			sys.exit() # Closing the window ends the script.
+			# sys.exit() # Closing the window ends the script. #works in linux
+			running = False # necessary for IDLE
 
 
 	screen.fill(black) #blacks out the screen using the color we specified above
@@ -50,7 +53,8 @@ while 1: #Forever loop.
 	x += 1
 	y += 1
 	
-	
+
+pygame.quit () # necessary for IDLE	
 
 
 #backup plan for exiting
